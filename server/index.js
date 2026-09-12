@@ -12,10 +12,12 @@ app.use(express.urlencoded({ limit: '50mb', extended: true }));
 
 // --- 1. DATABASE CONNECTION ---
 const db = mysql.createConnection({
-    host: '127.0.0.1',
-    user: 'root',
-    password: '', 
-    database: 'car_rental' 
+  host: process.env.DB_HOST || '127.0.0.1',
+  user: process.env.DB_USER || 'root',
+  password: process.env.DB_PASSWORD || '',
+  database: process.env.DB_NAME || 'car_rental',
+  port: process.env.DB_PORT || 3306,
+  ssl: process.env.DB_SSL === 'true' ? { minVersion: 'TLSv1.2' } : undefined
 });
 
 db.connect(err => {
