@@ -165,7 +165,10 @@ app.post('/api/reserve', (req, res) => {
     const sql = `INSERT INTO reservations (user_id, car_name, start_date, end_date, total_price, status, payment_method, reference_number) 
                  VALUES (?, ?, ?, ?, ?, 'Pending', ?, ?)`;
     db.query(sql, [userId, carName, startDate, endDate, total, paymentMethod, referenceNumber], (err, result) => {
-        if (err) return res.status(500).json({ error: "Failed to save reservation" });
+    if (err) {
+        console.error("❌ RESERVATION SQL ERROR:", err);
+        return res.status(500).json({ error: err.message });
+    }
         
         const updateCarSql = "UPDATE cars SET status = 'Rented' WHERE LOWER(?) LIKE CONCAT('%', LOWER(TRIM(name)), '%') OR LOWER(TRIM(name)) = LOWER(TRIM(?))";
         db.query(updateCarSql, [carName, carName], (updateErr) => {
