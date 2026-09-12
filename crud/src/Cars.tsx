@@ -55,8 +55,6 @@ export default function Cars() {
               const statusLower = String(car.status || '').toLowerCase().trim();
               const isAvailable = statusLower === 'available';
               const isMaintenance = statusLower === 'maintenance';
-              const isRented = statusLower === 'rented';
-
               return (
                 <div key={car.id} className="col-md-4 mb-4">
                   <div 
