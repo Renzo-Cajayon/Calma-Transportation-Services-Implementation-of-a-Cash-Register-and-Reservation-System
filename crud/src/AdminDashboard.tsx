@@ -14,7 +14,7 @@ export default function AdminDashboard({ onLogout }: AdminDashboardProps) {
   const fetchData = async () => {
     try {
       setLoading(true);
-      const res = await fetch('http://localhost:5000/api/reservations');
+      const res = await fetch('https://calma-transportation-services.onrender.com/api/reservations');
       if (!res.ok) throw new Error("Failed to fetch reservations");
       const data = await res.json();
       setAllBookings(data);
@@ -62,7 +62,7 @@ export default function AdminDashboard({ onLogout }: AdminDashboardProps) {
   // 3. Action Handlers
   const handleUpdate = async (id: number) => {
     try {
-      const res = await fetch(`http://localhost:5000/api/reservations/${id}`, { 
+      const res = await fetch(`https://calma-transportation-services.onrender.com/api/reservations/${id}`, { 
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ status: 'Paid' }) 
@@ -79,7 +79,7 @@ export default function AdminDashboard({ onLogout }: AdminDashboardProps) {
   const handleReject = async (id: number) => {
     if (window.confirm("Are you sure you want to decline/reject this reservation?")) {
       try {
-        const res = await fetch(`http://localhost:5000/api/reservations/reject/${id}`, { method: 'PUT' });
+        const res = await fetch(`https://calma-transportation-services.onrender.com/api/reservations/reject/${id}`, { method: 'PUT' });
         if (res.ok) {
           alert("Reservation rejected. Car set back to Available.");
           fetchData();
@@ -93,7 +93,7 @@ export default function AdminDashboard({ onLogout }: AdminDashboardProps) {
   const handleReturn = async (id: number) => {
     if (window.confirm("Mark this car as returned and available for next customer?")) {
       try {
-        const res = await fetch(`http://localhost:5000/api/reservations/return/${id}`, { method: 'PUT' });
+        const res = await fetch(`https://calma-transportation-services.onrender.com/api/reservations/return/${id}`, { method: 'PUT' });
         if (res.ok) {
           alert("Car returned! Fleet status updated to Available.");
           fetchData();
@@ -107,7 +107,7 @@ export default function AdminDashboard({ onLogout }: AdminDashboardProps) {
   const handleDelete = async (id: number) => {
     if (window.confirm("Are you sure you want to delete this record?")) {
       try {
-        await fetch(`http://localhost:5000/api/reservations/${id}`, { method: 'DELETE' });
+        await fetch(`https://calma-transportation-services.onrender.com/api/reservations/${id}`, { method: 'DELETE' });
         fetchData();
       } catch (err) {
         alert("Error deleting record");

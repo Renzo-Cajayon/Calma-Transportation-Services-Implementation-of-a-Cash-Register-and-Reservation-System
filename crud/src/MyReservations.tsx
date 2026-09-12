@@ -10,7 +10,7 @@ export default function MyReservations() {
 
   const fetchBookings = () => {
     if (userId) {
-      fetch(`http://localhost:5000/api/my-reservations/${userId}`)
+      fetch(`https://calma-transportation-services.onrender.com/api/my-reservations/${userId}`)
         .then(res => {
           if (!res.ok) throw new Error("Failed to fetch");
           return res.json();
@@ -43,7 +43,7 @@ export default function MyReservations() {
 
     if (window.confirm("Sigurado ka bang gusto mong kanselahin ang reservation na ito?")) {
       try {
-        const res = await fetch(`http://localhost:5000/api/reservations/cancel/${id}`, { 
+        const res = await fetch(`https://calma-transportation-services.onrender.com/api/reservations/cancel/${id}`, { 
           method: 'PUT',
           headers: { 'Content-Type': 'application/json' }
         });

@@ -90,8 +90,8 @@ export default function AdminCars({ onLogout }: AdminCarsProps) {
     try {
       setLoading(true);
       const [carRes, resRes] = await Promise.all([
-        fetch('http://localhost:5000/api/cars'),
-        fetch('http://localhost:5000/api/reservations')
+        fetch('https://calma-transportation-services.onrender.com/api/cars'),
+        fetch('https://calma-transportation-services.onrender.com/api/reservations')
       ]);
 
       if (!carRes.ok) throw new Error("Failed to fetch cars");
@@ -159,7 +159,7 @@ export default function AdminCars({ onLogout }: AdminCarsProps) {
     }
 
     try {
-      const res = await fetch(`http://localhost:5000/api/cars/status/${carId}`, {
+      const res = await fetch(`https://calma-transportation-services.onrender.com/api/cars/status/${carId}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ status: newStatus })
@@ -181,8 +181,8 @@ export default function AdminCars({ onLogout }: AdminCarsProps) {
     e.preventDefault();
     const method = editingId ? 'PUT' : 'POST';
     const url = editingId 
-      ? `http://localhost:5000/api/cars/${editingId}` 
-      : 'http://localhost:5000/api/cars';
+      ? `https://calma-transportation-services.onrender.com/api/cars/${editingId}` 
+      : 'https://calma-transportation-services.onrender.com/api/cars';
 
     try {
       const response = await fetch(url, {
@@ -211,7 +211,7 @@ export default function AdminCars({ onLogout }: AdminCarsProps) {
   const handleDelete = async (id: number) => {
     if(window.confirm("Are you sure you want to delete this vehicle?")) {
       try {
-        const res = await fetch(`http://localhost:5000/api/cars/${id}`, { method: 'DELETE' });
+        const res = await fetch(`https://calma-transportation-services.onrender.com/api/cars/${id}`, { method: 'DELETE' });
         if(res.ok) fetchData();
       } catch (err) {
         alert("Error deleting vehicle");

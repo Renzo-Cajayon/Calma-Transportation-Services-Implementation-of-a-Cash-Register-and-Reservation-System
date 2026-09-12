@@ -15,7 +15,7 @@ export default function AdminReservations({ onLogout }: AdminReservationsProps) 
   const fetchBookings = async () => {
     try {
       setLoading(true);
-      const response = await fetch('http://localhost:5000/api/reservations'); 
+      const response = await fetch('https://calma-transportation-services.onrender.com/api/reservations'); 
       const data = await response.json();
       
       console.log("Fetched Bookings:", data);

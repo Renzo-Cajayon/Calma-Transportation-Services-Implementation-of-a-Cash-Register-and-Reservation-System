@@ -7,7 +7,7 @@ export default function Profile() {
 
   useEffect(() => {
     if (userId) {
-      fetch(`http://localhost:5000/api/user/profile/${userId}`)
+      fetch(`https://calma-transportation-services.onrender.com/api/user/profile/${userId}`)
         .then(res => res.json())
         .then(data => {
           setUser(data);
@@ -25,7 +25,7 @@ export default function Profile() {
   const handleUpdate = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      const response = await fetch(`http://localhost:5000/api/user/profile/${userId}`, {
+      const response = await fetch(`https://calma-transportation-services.onrender.com/api/user/profile/${userId}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(user)

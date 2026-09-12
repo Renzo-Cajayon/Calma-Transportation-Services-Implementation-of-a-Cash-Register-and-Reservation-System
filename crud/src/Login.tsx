@@ -17,7 +17,7 @@ export default function Login({ onLogin }: LoginProps) {
     setError('');
     setLoading(true);
 
-    const endpoint = isSignup ? 'http://localhost:5000/api/register' : 'http://localhost:5000/api/login';
+    const endpoint = isSignup ? 'https://calma-transportation-services.onrender.com/api/register' : 'https://calma-transportation-services.onrender.com/api/login';
     const bodyData = isSignup ? { name, email, password } : { email, password };
 
     try {

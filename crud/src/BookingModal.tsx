@@ -68,7 +68,7 @@ export default function BookingModal({ car, onClose }: BookingModalProps) {
 
     try {
       // 3. I-send ang request sa Backend
-      const response = await fetch('http://localhost:5000/api/reserve', {
+      const response = await fetch('https://calma-transportation-services.onrender.com/api/reserve', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(bookingData),

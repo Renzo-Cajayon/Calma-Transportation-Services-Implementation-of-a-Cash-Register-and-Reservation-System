@@ -21,7 +21,7 @@ export default function LiveChatWidget() {
 
     try {
       // Kumokonekta ito sa iyong backend API kung saan pinoproseso ng AI ang tanong
-      const response = await fetch('http://localhost:5000/api/ai-chat', {
+      const response = await fetch('https://calma-transportation-services.onrender.com/api/ai-chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ message: userMessageText })
