@@ -81,13 +81,24 @@ app.get('/api/user/profile/:id', (req, res) => {
 });
 
 app.put('/api/user/profile/:id', (req, res) => {
+
     const { id } = req.params;
+
     const { name, phone_number, address } = req.body;
+
     const sql = "UPDATE users SET name = ?, phone_number = ?, address = ? WHERE id = ?";
+
     db.query(sql, [name, phone_number, address, id], (err, result) => {
-        if (err) return res.status(500).json({ error: "Failed to update profile" });
+
+        if (err) {
+            console.error("❌ PROFILE SQL ERROR:", err);
+            return res.status(500).json({ error: err.message });
+        }
+
         res.status(200).json({ message: "Profile updated successfully!" });
+
     });
+
 });
 
 // --- 4. CAR INVENTORY CRUD ---
