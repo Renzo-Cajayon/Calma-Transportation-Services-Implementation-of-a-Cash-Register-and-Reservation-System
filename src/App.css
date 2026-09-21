@@ -218,41 +218,54 @@ button, input, select, textarea {
   }
 
   /* User navbar */
-  .mobile-nav-toggle {
-    display: block;
-    margin-left: auto;
-  }
-  .navbar {
-    padding: 10px 12px !important;
-  }
-  .navbar-brand {
-    font-size: 1.15rem !important;
-  }
-  .navbar-collapse {
+.mobile-nav-toggle {
+  display: block;
+  margin-left: auto;
+}
+
+.navbar {
+  padding: 8px 12px !important;
+}
+
+.navbar-brand {
+  font-size: 1.15rem !important;
+}
+
+.navbar-collapse {
   background: #0f172a;
-  margin-top: 5px;
-  padding: 5px 0;
-  border-radius: 12px;
+  margin-top: 3px;
+  padding: 3px 0 !important;
+  border-radius: 8px;
 }
 
 .navbar-collapse.show {
-  max-height: calc(100vh - 70px);
+  max-height: calc(100vh - 60px);
   overflow-y: auto;
 }
-  .navbar-nav {
-    align-items: stretch !important;
-    gap: 0 !important;
-  }
-  .navbar-nav .nav-item {
-    margin-left: 0 !important;
-  }
-  .navbar-nav .nav-link {
-  padding: 6px 16px !important;
-  line-height: 1.2;
-  }
-  .navbar-nav .btn {
+
+.navbar-nav {
+  align-items: stretch !important;
+  gap: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.navbar-nav .nav-item {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.navbar-nav .nav-link {
+  display: block;
+  padding: 4px 16px !important;
+  margin: 0 !important;
+  line-height: 1.1 !important;
+}
+
+.navbar-nav .btn {
   width: calc(100% - 32px);
-  margin: 5px 16px !important;
+  margin: 4px 16px !important;
+  padding: 6px 12px !important;
 }
 
   /* Main pages */
