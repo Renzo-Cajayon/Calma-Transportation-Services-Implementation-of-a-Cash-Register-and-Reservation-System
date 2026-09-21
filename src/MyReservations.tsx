@@ -72,7 +72,7 @@ export default function MyReservations() {
         </div>
 
         <div className="table-responsive">
-          <table className="table bg-white shadow-sm rounded overflow-hidden">
+          <table className="table bg-white shadow-sm rounded overflow-hidden w-100">
             <thead style={{ backgroundColor: '#104494', color: '#fff' }}>
               <tr>
                 <th className="py-3 px-4">Car Model</th>
@@ -120,7 +120,7 @@ export default function MyReservations() {
                       </td>
                       
                       {/* Action Column (Receipt & Cancel Buttons) */}
-                      <td className="align-middle text-center" style={{ minWidth: '160px' }}>
+                      <td className="align-middle text-center">
                         <div className="d-flex justify-content-center align-items-center" style={{ gap: '6px' }}>
                           <button 
                             onClick={() => setSelectedBooking(b)}
