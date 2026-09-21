@@ -106,7 +106,7 @@ export default function App() {
             type="button"
             aria-label="Toggle navigation"
             aria-expanded={mobileNavOpen}
-            onClick={() => setMobileNavOpen(!mobileNavOpen)}
+            onClick={() => setMobileNavOpen(prev => !prev)}
           >
             <span className="navbar-toggler-icon"></span>
           </button>
