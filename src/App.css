@@ -247,12 +247,13 @@ button, input, select, textarea {
     margin-left: 0 !important;
   }
   .navbar-nav .nav-link {
-    padding: 11px 16px !important;
+  padding: 6px 16px !important;
+  line-height: 1.2;
   }
   .navbar-nav .btn {
-    width: calc(100% - 32px);
-    margin: 8px 16px !important;
-  }
+  width: calc(100% - 32px);
+  margin: 5px 16px !important;
+}
 
   /* Main pages */
   .ftco-section {
