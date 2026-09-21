@@ -216,6 +216,25 @@ button, input, select, textarea {
   body {
     font-size: 14px;
   }
+.mobile-user-nav .nav-item {
+  height: auto !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.mobile-user-nav .nav-link {
+  height: auto !important;
+  min-height: 0 !important;
+  padding: 3px 16px !important;
+  margin: 0 !important;
+  line-height: 1.1 !important;
+}
+
+.mobile-user-nav .btn {
+  margin-top: 3px !important;
+  margin-bottom: 3px !important;
+}
 
   /* User navbar */
 .mobile-nav-toggle {

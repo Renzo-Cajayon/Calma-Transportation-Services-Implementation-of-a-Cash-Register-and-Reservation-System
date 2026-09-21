@@ -112,7 +112,7 @@ export default function App() {
           </button>
 
           <div className={`collapse navbar-collapse ${mobileNavOpen ? 'show' : ''}`} id="userNav">
-            <ul className="navbar-nav ml-auto align-items-center" style={{ gap: '5px' }}>
+            <ul className="navbar-nav ml-auto align-items-center mobile-user-nav" style={{ gap: '5px' }}>
               <li className="nav-item"><Link to="/" onClick={() => setMobileNavOpen(false)} className="nav-link text-white px-3 font-weight-medium">Home</Link></li>
               <li className="nav-item"><Link to="/cars" onClick={() => setMobileNavOpen(false)} className="nav-link text-white px-3 font-weight-medium">Cars</Link></li>
               <li className="nav-item"><Link to="/reservations" onClick={() => setMobileNavOpen(false)} className="nav-link text-white px-3 font-weight-medium">My Bookings</Link></li>
