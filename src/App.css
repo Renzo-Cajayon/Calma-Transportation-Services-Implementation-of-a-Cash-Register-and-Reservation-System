@@ -229,11 +229,16 @@ button, input, select, textarea {
     font-size: 1.15rem !important;
   }
   .navbar-collapse {
-    background: #0f172a;
-    margin-top: 10px;
-    padding: 10px 0;
-    border-radius: 12px;
-  }
+  background: #0f172a;
+  margin-top: 5px;
+  padding: 5px 0;
+  border-radius: 12px;
+}
+
+.navbar-collapse.show {
+  max-height: calc(100vh - 70px);
+  overflow-y: auto;
+}
   .navbar-nav {
     align-items: stretch !important;
     gap: 0 !important;
